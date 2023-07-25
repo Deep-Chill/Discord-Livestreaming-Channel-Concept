@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+    --dark-bg: #36393f;
+    --dark-server-list: #202225;
+    --server-divider: #2d2f32;
+    --blurple: #7289da;
+    --dark-blurple: #4d5e94;
+    --green: #43b581;
+    --dark-primary: #2f3136;
+    --text-gray: #dcddde;
+    --user-box: #292B2F;
+    --iconColor: #b9bbbe;
+    --red: #dd4444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rootDiv {
+    display: grid;
+    grid-template-columns: 70px 300px 1fr;
+}
+
+.chat-area {
+    grid-column: 3;
+}
+
+.servers {
+    grid-column: 1;
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    background-color: var(--dark-server-list);
+    overflow-y: auto;
+    scrollbar-width: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+    z-index: 1;
+}
+
+.servers::-webkit-scrollbar {
+    width: 0px;
+}
+
+.homebutton,
+.server,
+.server img {
+    background-color: var(--dark-bg);
+    color: #FFFFFF;
+    border-radius: 50%;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.homebutton {
+    margin-top: 15px;
+}
+
+.server,
+.server img {
+    margin-top: 7px;
+    user-select: none;
+}
+
+.server img {
+    transition: 0.2s;
+}
+
+.invite {
+    color: var(--green) !important;
+    font-size: 48px;
+}
+
+.invite:hover {
+    color: #FFFFFF !important;
+    background-color: var(--green) !important;
+}
+
+.server-active, .server:hover, .homebutton:hover,
+.server img:hover {
+    background-color: var(--blurple);
+    border-radius: 30%;
+    transition: 0.3s;
+}
+
+.server-divider {
+    margin-top: 7px;
+    width: 50%;
+    background-color: var(--server-divider);
+    height: 3px;
+    border-radius: 15px;
+}
+
+.side-bar {
+    grid-column: 2;
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--dark-primary);
+}
+
+.nav {
+    overflow-y: auto;
+}
+
+.navGuildItems {
+    display: flex;
+    justify-content: space-between;
+}
+
+.guild-opener {
+    height: 30px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+
+.navguild {
+    border-bottom: 1px solid var(--dark-server-list);
+}
+
+.guildDropdown {
+    margin-right: 43px;
+}
+
+.userBox {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--user-box);
+    width: 100%;
+    height: 53px;
+    display: flex;
+}
+
+.userAvatar {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.userAvatar:hover {
+    background-color: #000000;
+    opacity: 0.8;
+}
+
+.userinfo {
+    margin-left: 55px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.username {
+    display: block !important;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.discriminator {
+    display: block !important;
+    margin: 0;
+    font-weight: lighter;
+    color: var(--text-gray);
+}
+
+.guildSelectorName {
+    user-select: none;
+    cursor: pointer;
+}
+
+.usermenuicons {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.mic, .headphone, .settings {
+    padding: 3px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.mic svg, .headphone svg, .settings svg {
+    height: 20px;
+    width: 20px;
+    fill: var(--iconColor);
+}
+
+.mic:hover, .headphone:hover, .settings:hover {
+    background-color: var(--dark-bg);
+}
+
+.channel-category {
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-gray);
+}
+
+.channel {
+    padding: 0 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-gray);
+}
+
+.channel:hover {
+    background-color: var(--dark-blurple);
+    color: #FFFFFF;
+}
+
+.hash {
+    margin-right: 10px;
+    color: var(--text-gray);
+}
+
+.channel:hover .hash {
+    color: #FFFFFF;
+}
+
+.message {
+    display: flex;
+    padding: 10px 0;
+}
+
+.user-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-message {
+    line-height: 1.3;
+}
+
+.timestamp {
+    color: var(--text-gray);
+    margin-left: 5px;
+}
+
+.text {
+    color: var(--text-gray);
+    margin-top: 2px;
+}
+
+.video-message {
+    line-height: 1.3;
+}
+
+.video-message .username {
+    color: var(--blurple);
+    font-weight: bold;
+}
+
+.video-message .text {
+    color: var(--text-gray);
+    margin-left: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 800px;
+    overflow-y: auto;
+}
+.message {
+    margin: 2px 0;
+    padding: 2px 0;
+}
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.message-top {
+    display: flex;
+    justify-content: start;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.timestamp {
+    color: #ccc;
+}
+
+.text {
+    color: #fff;
+}
+.livestream .message, .movieNight .message {
+    border: none !important;
+}
+.video-container {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.text-message, .video-message {
+    display: inline;
+    margin-bottom: 0.5em;  /* Adjust as needed to reduce space */
+}
+.message.generalChat {
+    border-bottom: 1px solid #ccc;
+}
+
+.user-message .username,
+.user-message .timestamp {
+    display: inline;
+}
+.chat-input-area {
+    padding: 10px;
+    background: #2f3136;
+    position: sticky;
+    bottom: 0;
+}
+
+.chat-input-area #chat-input {
+    width: 96%; /* Change to this */
+    padding: 10px;
+    border: none;
+    border-radius: 15px; /* Change to this */
+    color: #ccc;
+    background: #40444b;
+    height: 40px; /* Change to this */
+}
+
+.username, .timestamp {
+    display: inline;
+    white-space: nowrap;
+}
